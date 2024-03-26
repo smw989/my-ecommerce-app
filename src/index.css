@@ -62,15 +62,10 @@ main h1, main h2 {
 
 button {
   color: black;
-  background-color: rgb(46, 202, 46);
   border: solid thin black;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
-}
-
-button:hover{
-  background-color: rgb(41, 174, 41);
 }
 
 footer {
@@ -111,16 +106,6 @@ footer {
   margin-bottom: 20px;
 }
 
-.product-item button{
-  background-color: rgb(39, 172, 39);
-  transition: box-shadow 0.3s ease;
-}
-
-.product-item button:hover{
-  background-color: rgb(24, 193, 24);
-  box-shadow: 0 0 10px rgb(0, 255, 0);
-}
-
 .cart {
   width: 30%;
 }
@@ -147,13 +132,3 @@ footer {
   margin: 0 0 5px 0;
 }
 
-.cart-item-description button {
-  background-color: crimson;
-  color: papayawhip;
-  transition: box-shadow 0.3s ease;
-}
-
-.cart-item-description button:hover {
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-  cursor: pointer;
-}
