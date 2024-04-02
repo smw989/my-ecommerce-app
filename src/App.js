@@ -1,19 +1,26 @@
-//S M Wahid Chowdhury        UCID:30182020
-//Himel Paul                 UCID:30181836
-
-import './App.css';
+// In App.js or where you define your routes
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Homepage from './components/Homepage';
-import ProductPage from './components/ProductPage';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import ProductPage from './ProductPage';
+import LoginPage from './LoginPage';
+import HomePage from './HomePage'; // Assuming you have a HomePage component
+import { useAuth } from './AuthProvider'; // Assuming you have an AuthProvider for context
 
-const App = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/products" element={<ProductPage />} />
-    </Routes>
-  </BrowserRouter>
-);
+function App() {
+  const { isAuthenticated } = useAuth(); // Get the authentication status from context
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/products" element={
+          isAuthenticated ? <ProductPage /> : <Navigate to="/login" replace />
+        } />
+        {/* Add other routes as needed */}
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 export default App;
